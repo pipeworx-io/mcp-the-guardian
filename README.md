@@ -1,16 +1,24 @@
-# mcp-the-guardian
+# @pipeworx/the-guardian
 
-The Guardian Open Platform MCP.
+[The Guardian Open Platform](https://open-platform.theguardian.com/documentation/) MCP — articles, sections, tags, content. Free dev key (12 req/sec, 5k/day).
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
+
+## Auth
+
+- Platform: `PLATFORM_GUARDIAN_KEY`. BYO: `?_apiKey=…`.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `search` | Content search. |
-| `item` | Single article by id. |
-| `tags` | List tags. |
+- `search(q?, section?, tag?, from_date?, to_date?, page?, page_size?, order_by?, show_fields?, show_tags?, show_elements?)` — content search
+- `item(id, show_fields?, show_tags?, show_blocks?, show_references?)` — single article by id (e.g. `politics/2025/jan/01/...`)
+- `sections(q?)` — list sections (politics, sport, world, …)
+- `tags(q?, type?, section?, page?, page_size?)` — list tags
+- `editions(q?)` — editions (uk, us, au, international)
+
+## Data source
+
+`https://content.guardianapis.com`
 
 ## Quick Start
 
@@ -26,7 +34,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -50,7 +58,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
