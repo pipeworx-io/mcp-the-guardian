@@ -1,0 +1,119 @@
+[
+  {
+    "name": "search",
+    "description": "Search The Guardian newspaper archive (UK-based international news outlet) for articles by keyword, section, tag, or date range. Returns headlines with author, section, publication date, web URL, and optional full body text. Use for \"Guardian coverage of X\" or UK/EU-perspective news on world events.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "q": {
+          "type": "string"
+        },
+        "section": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "from_date": {
+          "type": "string"
+        },
+        "to_date": {
+          "type": "string"
+        },
+        "page": {
+          "type": "number"
+        },
+        "page_size": {
+          "type": "number"
+        },
+        "order_by": {
+          "type": "string"
+        },
+        "show_fields": {
+          "type": "string"
+        },
+        "show_tags": {
+          "type": "string"
+        },
+        "show_elements": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  {
+    "name": "item",
+    "description": "Fetch a single Guardian article by its content ID (e.g. \"world/2024/jan/15/...\"). Returns full body text, tags, related elements, and references. Use after search returns an article you want the full text of.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "show_fields": {
+          "type": "string"
+        },
+        "show_tags": {
+          "type": "string"
+        },
+        "show_blocks": {
+          "type": "string"
+        },
+        "show_references": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "sections",
+    "description": "List The Guardian's content sections (Politics, World, Sport, Culture, Environment, etc.). Optionally filter by name substring via q. Returns section IDs and titles for use as filters in search().",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "q": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  {
+    "name": "tags",
+    "description": "Browse The Guardian's content tags (topics, series, contributors, and keywords like \"climate-change\" or \"long-read\"). Filter by q substring, type (keyword/series/contributor), or section. Returns tag IDs for use in search(tag=...).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "q": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "section": {
+          "type": "string"
+        },
+        "page": {
+          "type": "number"
+        },
+        "page_size": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  {
+    "name": "editions",
+    "description": "List The Guardian's geographic editions (UK, US, Australia, International). Returns edition IDs and hostnames. Use to discover edition-specific content streams before filtering search() by edition.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "q": {
+          "type": "string"
+        }
+      }
+    }
+  }
+]
