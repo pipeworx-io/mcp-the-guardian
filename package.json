@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-the-guardian",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The Guardian Open Platform MCP.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "the-guardian",
     "gatewaySlug": "the-guardian",
-    "sourceHash": "v1-3ad2e69a2c7141180de842e3a4082ad3f95dd37ed22de52d3e4d6d50e4301133",
-    "sourceCommit": "f47d581679e1e887373df51ba623f891fbe4c464"
+    "sourceHash": "v1-19a3dbdce642febcf3e610a08d3c67f72f89fa12b6f9c8101af04d983760a948",
+    "sourceCommit": "868e119d526d5409447b7ee2149afba7eb9d2593"
   }
 }
